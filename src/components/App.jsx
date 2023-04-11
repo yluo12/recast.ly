@@ -3,7 +3,7 @@ import VideoList from './VideoList.js';
 
 const {useState} = React;
 var App = () => {
-  const [videoList, setVideoList] = useState(exampleVideoData);
+  const [videos, setVideos] = useState(exampleVideoData);
   return (
     <div>
       <nav className="navbar">
@@ -19,7 +19,7 @@ var App = () => {
 
 
 
-        <VideoList videoList={videoList} />
+        <VideoList videos={videos} />
       </div>
     </div>
   );
