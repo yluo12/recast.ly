@@ -1,10 +1,17 @@
-var VideoListEntry = ({video}) => (
+import App from './App.js';
+
+var VideoListEntry = ({video, selectVideo}) => (
   <div className="video-list-entry media">
     <div className="media-left media-middle">
       <img className="media-object" src={video.snippet.thumbnails.default.url} alt="" />
     </div>
     <div className="media-body">
-      <div className="video-list-entry-title">{video.snippet.title}</div>
+      <div className="video-list-entry-title"
+        onClick = {(e)=>{
+          var title = e.target.textContent;
+          selectVideo(title);
+        }}
+      >{video.snippet.title}</div>
       <div className="video-list-entry-detail">{video.snippet.description}</div>
     </div>
   </div>
